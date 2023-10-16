@@ -3,7 +3,14 @@ import { Box,Stack,Typography,Link } from '@mui/material'
 
 function Header() {
   return (
-   <Box>
+   <Box position="fixed" sx={{
+    background:"#fff",
+    width:"100%",
+    left:0,
+    padding:0,
+    margin:0,
+    zIndex:33
+   }}>
        <Box display="flex" flexDirection="row" justifyContent="space-between" alignItems="center" p={2}>
           <Typography fontWeight="bold">NaijaShelther</Typography>
           <Stack direction="row" spacing={3} alignItems="center">

@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
 "use client"
 import React, { useState } from 'react';
 import {
@@ -12,13 +14,14 @@ import {
   IconButton,
   FormControl,
   InputLabel,
-  Button,
   ToggleButtonGroup,
   ToggleButton
 } from '@mui/material';
+import Button from '@/components/Button';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Image from 'next/image';
+import Logo from '@/components/Logo';
 
 function Page() {
   const [showPassword, setShowPassword] = useState(false);
@@ -42,19 +45,30 @@ function Page() {
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
           padding: 0,
-          margin:0
+          margin:0,
+          
         }}
       >
-        <Image src="/log.jpg" width={700} style={{
-           padding: 0,
-           margin:0
-        }} height={750} alt="" />
+        <img
+        src="/log.jpg"
+        style={{
+          padding: 0,
+          width:"100%",
+          margin: 0,
+          objectFit: 'cover',
+          height: "100vh"
+        }}
+        alt=""
+      />
+
+
         <Box padding={10}>
+          <Logo/>
           <Typography fontSize={24} fontWeight={500}>Sign in to</Typography>
           <Typography>If you don't have an account, register</Typography>
           <Stack direction="row" alignItems="center" gap={1}>
             <Typography>You can </Typography>
-            <Link sx={{ textDecoration: 'none', fontWeight: 600 }}>Register here!</Link>
+            <Link href="/auth/register" sx={{ textDecoration: 'none', fontWeight: 600 }}>Register here!</Link>
           </Stack>
           <Stack gap={1} mt={5} width="100%">
           <ToggleButtonGroup
@@ -97,15 +111,15 @@ function Page() {
               Forgot password?
             </Typography>
             <Button
-              sx={{
+              style={{
                 color: '#fff',
                 marginTop: 2,
-                height: '56px',
+                background:"rgb(25, 118, 210)",
+                
               }}
-              variant="contained"
-            >
-              Login
-            </Button>
+              name="Login"
+            />
+              
           </Stack>
         </Box>
       </Box>
