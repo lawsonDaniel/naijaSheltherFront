@@ -12,7 +12,8 @@ import {
   Typography,
 } from '@mui/material';
 import { typesOfHousesInNigeria } from '@/common/typeOfHouses';
-import { stateInfo } from '@/common/stateInfo';
+import { stateInfo,stateWithLocation } from '@/common/stateInfo';
+import { GoogleMap, useJsApiLoader,Marker } from '@react-google-maps/api';
 
 
 function UploadHouse() {
@@ -20,14 +21,64 @@ function UploadHouse() {
   const [selectedState, setSelectedState] = useState('');
   const [lgaData, setLgaData] = useState([]);
   const [selectedLga, setSelectedLga] = useState('');
+  const [selectedLocation, setSelectedLocation] = useState(null);
+  const [latitude, setLatitude] = useState(0);
+  const [longitude, setLongitude] = useState(0);
 
+  
   const handleTypeChange = (event:any) => {
     setSelectedType(event.target.value);
   };
+  // Function to handle map click
+  const handleMapClick = (e:any) => {
+    setSelectedLocation(e.latLng.toJSON());
+  };
+
+  const containerStyle = {
+    width: '100%',
+    height: '500px'
+  };
+  
+  const center = {
+    lat: Number(latitude) || -3.745,
+    lng: Number(longitude) || -38.523
+  };
+console.log(center,'center')
+  //google maps
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: ""
+  })
+
+  const [map, setMap] = React.useState<any>(null)
+
+  const onLoad = React.useCallback(function callback(map:any) {
+    // This is just an example of getting and using the map instance!!! don't just blindly copy!
+    const bounds = new window.google.maps.LatLngBounds(center);
+    map.fitBounds(bounds);
+
+    setMap(map)
+  }, [])
+
+  const onUnmount = React.useCallback(function callback(map:any) {
+    setMap(null)
+  }, [])
+
+console.log(isLoaded,'isLoaded')
+
+
+
+
+
 
   useEffect(() => {
     const stateData = [''];
     const statetest:any = stateInfo.find((state) => state.state === selectedState);
+    const locationData = stateWithLocation.find((state) => state?.state.toLowerCase() === selectedState.toLowerCase())
+    if(locationData){
+      setLatitude(locationData?.lat)
+      setLongitude(locationData?.long)
+    }
     if (statetest) {
       setLgaData(statetest.lgas);
     }
@@ -141,7 +192,33 @@ function UploadHouse() {
         </Stack>
       </Box>
       <Box>  
+      <Stack direction="row" padding={4} width="100%"  marginTop={1}> 
+        <Box width="100%" >
+          <Typography sx={{
+            marginBottom:2
+          }}>Select House On Map</Typography>
+                {
+  isLoaded ? (
+    <GoogleMap
+      mapContainerStyle={containerStyle}
+      center={center}
+      zoom={10}
+      onLoad={onLoad}
+      onUnmount={onUnmount}
+      onClick={handleMapClick} // Add this onClick handler
+    >
+       {selectedLocation && (
+          <Marker
+            position={selectedLocation}
+          />
+        )}
+    </GoogleMap>
+    ) : <></>
+}
+        </Box>
+        </Stack>
       </Box>
+
       <Box width="100%" display="flex" justifyContent="flex-end" padding={4}>
       <Button size="large" variant="contained" href="#contained-buttons">
         Continue

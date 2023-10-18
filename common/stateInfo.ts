@@ -996,3 +996,34 @@ export const stateInfo = [
       ]
     }
   ]
+
+  export const stateWithLocation = [
+    {"state": "Ogun", "lat": 7.145244, "long": 3.327695},
+    {"state": "Rivers", "lat": 4.824167, "long": 7.033611},
+    {"state": "Borno", "lat": 11.833333, "long": 13.150000},
+    {"state": "Kano", "lat": 12.000000, "long": 8.516667},
+    {"state": "Katsina", "lat": 12.985531, "long": 7.617144},
+    {"state": "Anambra", "lat": 6.010519, "long": 6.910345},
+    {"state": "Delta", "lat": 5.879698, "long": 5.700531},
+    {"state": "Lagos", "lat": 6.605874, "long": 3.349149},
+    {"state": "Ondo", "lat": 7.250771, "long": 5.210266},
+    {"state": "Cross River", "lat": 4.982873, "long": 8.334503},
+    {"state": "Oyo", "lat": 7.536318, "long": 3.418143},
+    {"state": "Kaduna", "lat": 11.085541, "long": 7.719945},
+    {"state": "Plateau", "lat": 9.896527, "long": 8.858331},
+    {"state": "Niger", "lat": 9.583555, "long": 6.546316},
+    {"state": "Sokoto", "lat": 13.005873, "long": 5.247552},
+    {"state": "Osun", "lat": 7.629209, "long": 4.187218},
+    {"state": "Adamawa", "lat": 9.203496, "long": 12.495390},
+    {"state": "Edo", "lat": 6.339185, "long": 5.617447},
+    {"state": "Bauchi", "lat": 10.314159, "long": 9.846282},
+    {"state": "Ekiti", "lat": 7.621111, "long": 5.221389},
+    {"state": "Gombe", "lat": 10.283333, "long": 11.166667},
+    {"state": "Kwara", "lat": 8.500000, "long": 4.550000},
+    {"state": "Zamfara", "lat": 12.600000, "long": 6.589722},
+    {"state": "Ibadan, Nigeria", "lat": 7.376736, "long": 3.939786},
+    {"state": "Enugu", "lat": 6.459964, "long": 7.548949},  // Replace with Enugu's actual coordinates
+    {"state": "Benue", "lat": 7.3333333, "long": 8.7499972},  // Replace with Benue's actual coordinates
+    {"state": "Ebonyi", "lat": 6.2649, "long": 8.0137},  // Replace with Ebonyi's actual coordinates
+    {"state": "Nasarawa", "lat": 8.4998, "long": 8.1997}  // Replace with Nasarawa's actual coordinates
+];

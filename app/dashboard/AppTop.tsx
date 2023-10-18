@@ -1,18 +1,29 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-
-function AppTop() {
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+function AppTop({onpenSide,side}:any) {
   return (
     <Box sx={{
         backgroundColor:"#fff",
         height:60,
-      
+        display:"flex",
+        justifyContent:"space-between",
         width:"100%",
         padding:3,
         position:"fixed",
         zIndex:4
 
     }}>
+  
+    {
+      side ?  <CloseIcon onClick={()=>{
+        onpenSide(false)
+      }}/>: <MenuIcon onClick={()=>{
+        onpenSide(true)
+      }}/>
+    }
+   
     <Typography>Top Area</Typography>
     </Box>
   )
