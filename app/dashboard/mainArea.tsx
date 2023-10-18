@@ -1,17 +1,28 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
+import Overview from './pages/Overview'
+import UplaodHouse from './pages/upload'
 
-function MainArea() {
+interface FUNCTIONPROPS {
+  activePage:string
+}
+function MainArea({activePage}:FUNCTIONPROPS) {
   return (
     <Box sx={{
         backgroundColor:"#eee",
-        height:"100vh",
+        height:"100%",
         overflow:'auto',
         width:"100%",
-        padding:3
-
+        padding:3,
+        position:"relative",
+        top:56
     }}>
-    <Typography>Main Area</Typography>
+   {
+    activePage  === "OverView" && <Overview/>
+   } 
+  {
+    activePage === "Upload" && <UplaodHouse/>
+  }
     </Box>
   )
 }

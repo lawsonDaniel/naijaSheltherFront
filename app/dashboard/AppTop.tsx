@@ -6,10 +6,11 @@ function AppTop() {
     <Box sx={{
         backgroundColor:"#fff",
         height:60,
-        background:"ddd",
+      
         width:"100%",
         padding:3,
-        position:"fixed"
+        position:"fixed",
+        zIndex:4
 
     }}>
     <Typography>Top Area</Typography>

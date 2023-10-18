@@ -1,19 +1,26 @@
+"use client"
 import { Box, Typography } from '@mui/material'
-import React from 'react'
+import React,{useState} from 'react'
 import Sidebar from './sidebar'
 import MainArea from './mainArea'
 import AppTop from './AppTop'
 
-function page() {
+function Page() {
+  const [activePage,setActivePage] = useState<string>('OverView')
+  console.log(activePage,'active pages')
   return (
-    <Box display="flex">
-        <Sidebar/>
-       <Box width="100%" display="flex" flexDirection="column">
+    <Box display="flex" sx={{
+      overflowY:'none'
+    }}>
+        <Sidebar setActivePage={setActivePage}/>
+       <Box width="100%" display="flex" sx={{
+        
+       }} flexDirection="column">
         <AppTop/>
-       <MainArea/>
+       <MainArea activePage={activePage}/>
        </Box>
     </Box>
     )
 }
 
-export default page
+export default Page
