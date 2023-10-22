@@ -4,11 +4,11 @@ import React from 'react'
 interface FUNCTIONPROP {
     title:string,
     subTitle:string,
-    bgColors:string,
+    bg:string,
     color:string,
     icon: React.JSX.Element
 }
-function DashInfoCard({title,subTitle,bgColors,color,icon}: FUNCTIONPROP ) {
+function DashInfoCard({title,subTitle,bg,color,icon}: FUNCTIONPROP ) {
   return (
    <Box display="flex" flexDirection="column" width={300} height={100} sx={{
     backgroundColor: "#fff",
@@ -20,7 +20,7 @@ function DashInfoCard({title,subTitle,bgColors,color,icon}: FUNCTIONPROP ) {
                 <Box sx={{
                     width:40,
                     height:40,
-                    background:"rgba(8, 142, 190, 0.52)",
+                    background:bg,
                     alignItems:"center",
                     justifyContent:"center",
                     display:"flex",

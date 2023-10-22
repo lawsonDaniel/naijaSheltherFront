@@ -13,7 +13,7 @@ function Overview() {
             <DashInfoCard 
             title="House posted"
             subTitle='5000'
-            bgColors="rgba(8, 142, 190, 0.52)"
+            bg="rgb(255, 197, 32)"
             color="#fff"
             icon={<HomeIcon/>}
             />
@@ -21,7 +21,7 @@ function Overview() {
         <DashInfoCard 
             title="View Count"
             subTitle='200'
-            bgColors="rgba(8, 142, 190, 0.52)"
+            bg="rgb(97, 228, 153)"
             color="#fff"
             icon={<VisibilityIcon/>}
             />
@@ -29,7 +29,7 @@ function Overview() {
         <DashInfoCard 
             title="View Count"
             subTitle='200'
-            bgColors="rgba(8, 142, 190, 0.52)"
+            bg="rgb(255, 142, 85)"
             color="#fff"
             icon={<VisibilityIcon/>}
             />

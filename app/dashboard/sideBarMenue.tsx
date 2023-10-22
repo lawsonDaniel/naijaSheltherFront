@@ -16,7 +16,7 @@ function SideBarMenue({menue,onClick,icon}:FunctionProps) {
   return (
    
         <Box onClick={onClick} display="flex" width="100%" height={56} sx={{
-        backgroundColor: '#0b36b8',
+        backgroundColor: 'rgb(12 81 63)',
         alignItems:"center",
         gap:2,
         padding:2,

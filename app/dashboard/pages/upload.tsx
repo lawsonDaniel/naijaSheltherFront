@@ -237,7 +237,9 @@ console.log(isLoaded,'isLoaded')
         </Box>
       </Box>
       <Box width="100%" display="flex" justifyContent="flex-end" padding={4}>
-      <Button size="large" variant="contained" href="#contained-buttons">
+      <Button size="large" sx={{
+        backgroundColor:"rgb(12 81 63)"
+      }} variant="contained" href="#contained-buttons">
         Continue
     </Button>
       </Box>

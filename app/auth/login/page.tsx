@@ -68,7 +68,7 @@ function Page() {
           <Typography>If you don't have an account, register</Typography>
           <Stack direction="row" alignItems="center" gap={1}>
             <Typography>You can </Typography>
-            <Link href="/auth/register" sx={{ textDecoration: 'none', fontWeight: 600 }}>Register here!</Link>
+            <Link href="/auth/register" sx={{ textDecoration: 'none', fontWeight: 600,color:"rgb(12 81 63)" }}>Register here!</Link>
           </Stack>
           <Stack gap={1} mt={5} width="100%">
           <ToggleButtonGroup
@@ -114,7 +114,7 @@ function Page() {
               style={{
                 color: '#fff',
                 marginTop: 2,
-                background:"rgb(25, 118, 210)",
+                background:"rgb(12 81 63)",
                 
               }}
               name="Login"

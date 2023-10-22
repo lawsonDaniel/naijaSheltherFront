@@ -8,4 +8,6 @@ export const typesOfHousesInNigeria = [
     'Ranch',
     'Villa',
     'Condo',
+    'Self Contain',
+    "Hostel"
   ];

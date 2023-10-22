@@ -27,7 +27,7 @@ function Header() {
               width:400
             }}/>
             <Button style={{
-              backgroundColor:'#f365bb',
+              backgroundColor:'rgb(12 81 63)',
               color:"#fff",
               width:100,
               boxShadow: "2px 0 7px rgba(51, 51, 51, 0.25)"
@@ -41,11 +41,13 @@ function Header() {
               textDecoration: "none"
             }}  href="#">Support</Link>
             <Link href="/auth/login" sx={{
-              backgroundColor:'#f365bb',
+              backgroundColor:'rgb(12 81 63)',
               padding:1,
               color:"#fff",
               width:74,
+              height:"54px",
               borderRadius:2,
+              display:"flex",
               textDecoration: 'none',
               alignItems:"center",
               justifyContent:"center",
