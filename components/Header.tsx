@@ -1,6 +1,8 @@
 import React from 'react'
-import { Box,Stack,Typography,Link } from '@mui/material'
-
+import { Box,Stack,Typography,Link, TextField, } from '@mui/material'
+import Button from './Button'
+import InputAdornment from '@mui/material/InputAdornment';
+import SearchIcon from '@mui/icons-material/Search';
 function Header() {
   return (
    <Box position="fixed" sx={{
@@ -9,10 +11,28 @@ function Header() {
     left:0,
     padding:0,
     margin:0,
-    zIndex:33
+    zIndex:33,
+    boxShadow: "2px 0 7px rgba(51, 51, 51, 0.25)"
    }}>
        <Box display="flex" flexDirection="row" justifyContent="space-between" alignItems="center" p={2}>
           <Typography fontWeight="bold">NaijaShelther</Typography>
+          <Stack direction="row" spacing={3} alignItems="center">
+            <TextField id="outlined-search" placeholder='Search house'  InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }} type="search" sx={{
+              width:400
+            }}/>
+            <Button style={{
+              backgroundColor:'#f365bb',
+              color:"#fff",
+              width:100,
+              boxShadow: "2px 0 7px rgba(51, 51, 51, 0.25)"
+            }} name="search"/>
+          </Stack>
           <Stack direction="row" spacing={3} alignItems="center">
             <Link color="#000" sx={{
               textDecoration: "none"

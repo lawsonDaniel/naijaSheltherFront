@@ -11,16 +11,16 @@ function Page() {
   console.log(activePage,'active pages')
   return (
     <Box display="flex" sx={{
-      overflowY:'none'
+      overflowY:"hidden",
     }}>
       {
-        showSideBar &&  <Sidebar setActivePage={setActivePage}/> 
+        showSideBar &&  <Sidebar onpenSide={setShowSideBar} setActivePage={setActivePage}/> 
       }
        <Box width="100%" display="flex" sx={{
         
        }} flexDirection="column">
         <AppTop onpenSide={setShowSideBar} side={showSideBar}/>
-       <MainArea activePage={activePage}/>
+       <MainArea activePage={activePage} setShowSideBar={setShowSideBar} showSideBar={showSideBar}/>
        </Box>
     </Box>
     )

@@ -6,7 +6,9 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 
 function Overview() {
   return (
-   <Box width="100%" >
+   <Box width="100%" sx={{
+    overflowY:'auto'
+   }} >
         <Box display="grid" gridTemplateColumns="1fr 1fr 1fr" gap={1}>
             <DashInfoCard 
             title="House posted"

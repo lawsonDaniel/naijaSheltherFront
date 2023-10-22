@@ -88,7 +88,7 @@ console.log(isLoaded,'isLoaded')
     <Box width="100%" height="100%" sx={{
       backgroundColor: '#fff',
       borderRadius:3,
-      
+      overflowY:'auto'
     }}>
       <Typography fontWeight="bold" paddingLeft={4} paddingRight={4} paddingBottom={2} paddingTop={2} fontSize={24}>Upload House Information</Typography>
       <Divider/>
@@ -218,7 +218,24 @@ console.log(isLoaded,'isLoaded')
         </Box>
         </Stack>
       </Box>
+      <Box sx={{
+        padding:4
+      }}>
+        <Typography>Upload House Image</Typography>
+        <Box sx={{
+          display:"grid",
+          gridTemplateColumns:"1fr 1fr 1fr",
+          marginTop:5
+        }}>
 
+      <img src="/card.jpg" alt="card" style={{
+          borderRadius:20,
+          width:250,
+          height:200,
+          objectFit:"cover"
+        }}/>
+        </Box>
+      </Box>
       <Box width="100%" display="flex" justifyContent="flex-end" padding={4}>
       <Button size="large" variant="contained" href="#contained-buttons">
         Continue

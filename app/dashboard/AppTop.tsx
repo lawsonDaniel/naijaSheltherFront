@@ -12,9 +12,13 @@ function AppTop({onpenSide,side}:any) {
         width:"100%",
         padding:3,
         position:"fixed",
-        zIndex:4
+        zIndex:4,
+        
 
-    }}>
+
+    }}
+      
+    >
   
     {
       side ?  <CloseIcon onClick={()=>{
