@@ -33,7 +33,7 @@ function HouseCard({click}:any) {
       fontSize: "1.125rem",
       lineHeight: "1.75rem"
     }} color="#000">House Location</Typography>
-    <Typography  fontSize={12} color="rgb(55 187 141)">54km away</Typography>
+    <Typography  fontSize={12} color="rgb(55 187 141)">For Rent</Typography>
    </Box>
    <Box sx={{
     display:"flex",

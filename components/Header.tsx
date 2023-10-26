@@ -17,7 +17,7 @@ function Header() {
        <Box display="flex" flexDirection="row" justifyContent="space-between" alignItems="center" p={2}>
           <Typography fontWeight="bold">NaijaShelther</Typography>
           <Stack direction="row" spacing={3} alignItems="center">
-            <TextField id="outlined-search" placeholder='Search house'  InputProps={{
+            <TextField id="outlined-search" placeholder='Search NaijaShelther'  InputProps={{
           startAdornment: (
             <InputAdornment position="start">
               <SearchIcon />
