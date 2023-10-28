@@ -12,11 +12,11 @@ interface FUNCTIONPROPS {
 function MainArea({activePage,showSideBar,setShowSideBar}:FUNCTIONPROPS) {
   return (
     <Box sx={{
-        backgroundColor:"#eee",
+        backgroundColor:"rgb(55 187 141)",
         height:"100vh",
         overflowY:"hidden",
         width:"100%",
-        padding:3,
+        padding:5,
         position:"relative",
         top:56,
         

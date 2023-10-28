@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react';
 import {
   Box,
@@ -36,7 +37,9 @@ function UploadHouse() {
 
   const containerStyle = {
     width: '100%',
-    height: '500px'
+    height: '500px',
+    border:"4px solid #000",
+    borderRadius:"15px"
   };
   
   const center = {
@@ -86,9 +89,12 @@ console.log(isLoaded,'isLoaded')
 
   return (
     <Box width="100%" height="100%" sx={{
-      backgroundColor: '#fff',
+      backgroundColor: 'rgb(255 197 1)',
+      color:"#000",
       borderRadius:3,
-      overflowY:'auto'
+      overflowY:'auto',
+      border:"4px solid #000",
+
     }}>
       <Typography fontWeight="bold" paddingLeft={4} paddingRight={4} paddingBottom={2} paddingTop={2} fontSize={24}>Upload House Information</Typography>
       <Divider/>

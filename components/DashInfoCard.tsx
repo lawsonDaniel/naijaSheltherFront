@@ -10,10 +10,11 @@ interface FUNCTIONPROP {
 }
 function DashInfoCard({title,subTitle,bg,color,icon}: FUNCTIONPROP ) {
   return (
-   <Box display="flex" flexDirection="column" width={300} height={100} sx={{
+   <Box display="flex" flexDirection="column" width={300} height={130} sx={{
     backgroundColor: "#fff",
     borderRadius:4,
-    padding:2
+    padding:3,
+    border:"4px solid #000"
    }}>
         <Box gap={2} display="flex" flexDirection="column">
             <Box gap={2} display="flex"  alignItems="center">

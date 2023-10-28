@@ -5,8 +5,9 @@ import CloseIcon from '@mui/icons-material/Close';
 function AppTop({onpenSide,side}:any) {
   return (
     <Box sx={{
-        backgroundColor:"#fff",
+        backgroundColor:"#000",
         height:60,
+        color:"#fff",
         display:"flex",
         justifyContent:"space-between",
         width:"100%",
