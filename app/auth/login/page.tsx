@@ -22,16 +22,36 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Image from 'next/image';
 import Logo from '@/components/Logo';
+import { Authclass } from '@/app/api/auth.class';
+import { useFormik } from 'formik';
+import * as Yup from 'yup'
 
 function Page() {
   const [showPassword, setShowPassword] = useState(false);
+  const [alignment, setAlignment] = React.useState('agent');
 
+  // consr LoginSchema = 
+  //handle formik values 
+  const formik = useFormik({
+    initialValues:{
+        email:"",
+        password:"",
+        
+    },
+    onSubmit: (values:any)=>{
+      values = {
+        ...values,
+        userType:alignment
+      }
+      alert(JSON.stringify(values,null,2))
+    }
+  })
+  console.log(formik,alignment,'formik values')
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
   };
-  const [alignment, setAlignment] = React.useState('User');
-
+  
   const handleChange = (
     event: React.MouseEvent<HTMLElement>,
     newAlignment: string,
@@ -65,11 +85,12 @@ function Page() {
         <Box padding={10}>
           <Logo/>
           <Typography fontSize={24} fontWeight={500}>Sign in to</Typography>
-          <Typography>If you don't have an account, register</Typography>
+          <Typography>If you don't have an account, registered</Typography>
           <Stack direction="row" alignItems="center" gap={1}>
             <Typography>You can </Typography>
             <Link href="/auth/register" sx={{ textDecoration: 'none', fontWeight: 600,color:"rgb(12 81 63)" }}>Register here!</Link>
           </Stack>
+          <form onSubmit={formik.handleSubmit}>
           <Stack gap={1} mt={5} width="100%">
           <ToggleButtonGroup
             color="primary"
@@ -81,16 +102,22 @@ function Page() {
             onChange={handleChange}
             aria-label="Platform"
           >
-            <ToggleButton sx={{width:100}} value="web">Agent</ToggleButton>
-            <ToggleButton sx={{width:100}} value="android">User</ToggleButton>
+            <ToggleButton sx={{width:100}} value="agent">Agent</ToggleButton>
+            <ToggleButton sx={{width:100}} value="user">User</ToggleButton>
           </ToggleButtonGroup>
             <FormControl sx={{ m: 1 }} variant="outlined">
-              <TextField label="Enter email" variant="outlined" />
+              <TextField 
+              id="email"
+               onChange={formik.handleChange}
+               value={formik.values.email}
+                label="Enter email" variant="outlined" />
             </FormControl>
             <FormControl sx={{ m: 1 }} variant="outlined">
-              <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+              <InputLabel htmlFor="password">Password</InputLabel>
               <OutlinedInput
-                id="outlined-adornment-password"
+                id="password"
+                onChange={formik.handleChange}
+                value={formik.values.password}
                 type={showPassword ? 'text' : 'password'}
                 endAdornment={
                   <InputAdornment position="end">
@@ -119,8 +146,8 @@ function Page() {
               }}
               name="Login"
             />
-              
           </Stack>
+          </form> 
         </Box>
       </Box>
     </>

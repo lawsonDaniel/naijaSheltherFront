@@ -6,9 +6,9 @@ import Header from '@/components/Header';
 import HouseCard from '@/components/houseCard';
 import AlertDialog from '@/components/alertCard';
 import HouseFilter from '@/components/houseFilter';
-function Page() {
-  const [open, setOpen] = useState(false);
 
+function Page() {
+  const [open, setOpen] = useState(false);  
   const handleClickOpen = () => {
     setOpen(true);
   };

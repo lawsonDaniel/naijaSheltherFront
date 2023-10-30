@@ -1,7 +1,7 @@
 import axios from "axios";
 import { GetStoredAuthToken } from "@/common/hooks";
 //https://ui62646llb.execute-api.us-east-1.amazonaws.com/prod
- const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+ const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3001"
  console.log(baseURL,'backend running')
 // Create an Axios instance with the base URL
 const api = axios.create({

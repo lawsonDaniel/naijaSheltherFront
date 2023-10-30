@@ -430,7 +430,7 @@ console.log(isLoaded,'isLoaded')
                 </Stack>
                 <Divider />
                 <Stack>
-                    <Typography>Inform the seller you got their number on NaijaShelther so they know where you came from</Typography>
+                    <Typography>Inform the agent you got their number on NaijaShelther so they know where you came from</Typography>
                 </Stack>
                </Box>
                <Button
